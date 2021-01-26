@@ -190,5 +190,10 @@ namespace UTTT.Ejemplo.Persona
         }
 
         #endregion
+
+        protected void FechaNaci_SelectionChanged(object sender, EventArgs e)
+        {
+           val.Value = FechaNaci.SelectedDate.ToString();
+        }
     }
 }
