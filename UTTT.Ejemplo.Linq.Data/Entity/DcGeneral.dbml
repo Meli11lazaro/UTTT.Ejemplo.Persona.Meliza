@@ -8,16 +8,6 @@
       <Association Name="CatSexo_Persona" Member="Persona" ThisKey="id" OtherKey="idCatSexo" Type="Persona" />
     </Type>
   </Table>
-  <Table Name="dbo.Direccion" Member="Direccion">
-    <Type Name="Direccion">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="strCalle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="strNumero" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="strColonia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Persona_Direccion" Member="Persona" ThisKey="idPersona" OtherKey="id" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Persona" Member="Persona">
     <Type Name="Persona">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -28,8 +18,21 @@
       <Column Name="idCatSexo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="strFechaN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="strNHermanos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strCorreo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="strRfc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="strCPostal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Persona_Direccion" Member="Direccion" ThisKey="id" OtherKey="idPersona" Type="Direccion" />
       <Association Name="CatSexo_Persona" Member="CatSexo" ThisKey="idCatSexo" OtherKey="id" Type="CatSexo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direccion" Member="Direccion">
+    <Type Name="Direccion">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="strCalle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strNumero" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="strColonia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Persona_Direccion" Member="Persona" ThisKey="idPersona" OtherKey="id" Type="Persona" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

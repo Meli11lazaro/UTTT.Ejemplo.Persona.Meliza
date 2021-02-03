@@ -112,6 +112,9 @@ namespace UTTT.Ejemplo.Persona
                     dcGuardar.GetTable<UTTT.Ejemplo.Linq.Data.Entity.Persona>().InsertOnSubmit(persona);
                     dcGuardar.SubmitChanges();
 
+                    persona.strCorreo = this.txtCorreo.Text.Trim();
+                    persona.strRfc = this.txtRfc.Text.Trim();
+                    persona.strCPostal = this.txtCPostal.Text.Trim();
 
                     this.showMessage("El registro se agrego correctamente.");
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);
@@ -129,6 +132,10 @@ namespace UTTT.Ejemplo.Persona
                     DateTime fechaNacimiento = this.FechaNaci.SelectedDate.Date;
                     persona.strFechaN = fechaNacimiento;
                     persona.strNHermanos = int.Parse(this.txtHermanos.Text);
+
+                    persona.strCorreo = this.txtCorreo.Text.Trim();
+                    persona.strRfc = this.txtRfc.Text.Trim();
+                    persona.strCPostal = this.txtCPostal.Text.Trim();
 
                     this.showMessage("El registro se edito correctamente.");
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);

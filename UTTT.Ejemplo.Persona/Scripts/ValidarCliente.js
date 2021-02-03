@@ -31,14 +31,14 @@
     if (cunica == null || nombre == null || ap == null || am == null || fecha == null) {
 
         ban = false;
-        messaje = "Completa este dato";
+        messaje = "Datos requeridos";
 
     } else if (!(/\d{3}$/.test(cunica))) {
 
-        messaje = "La clave deve contener mas de 3 dijitos"
+        messaje = "La clave deve contener 3 dijitos"
         ban = false;
 
-    } else if (!(/[A-z]{3}/.test(nombre)) || !(/[A-z]{3}/.test(ap)) || !(/[A-z]{3}/.test(am))) {
+    } else if (!(/[A-z]{3}/.test(nombre)) || !(/[A-z]{3}/.test(ap))) {
 
         messaje = "Caracteres mínimos 3 letras, maximo 15 "
         ban = false;
@@ -55,7 +55,7 @@
 
     } else if (sex < 0 || sex > 2) {
 
-        messaje = "Dato requerido";
+        messaje = "Selecciona sexo";
         ban = false;
 
     }

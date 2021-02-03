@@ -11,7 +11,6 @@ using System.Linq.Expressions;
 using System.Collections;
 using UTTT.Ejemplo.Persona.Control;
 using UTTT.Ejemplo.Persona.Control.Ctrl;
-
 #endregion
 
 namespace UTTT.Ejemplo.Persona
